@@ -17,19 +17,12 @@ char pass[] = "robotto@123";
 #define Echo 14 // ultrasonic sensor echo pin
 
 long distance;
-int forward,backward;
+int forward;
 
 BLYNK_WRITE(V0)
 {
   forward = param.asInt();
 }
-
-BLYNK_WRITE(V1)
-{
- backward = param.asInt();
-}
-
-
 
 long ultrasound() 
 {
@@ -69,10 +62,5 @@ void loop()
   if(forward == 1)
   {
     Otto.walk(2,700,1);
-  }
-  
-  if(backward == 1)
-  {
-    Otto.walk(2,700,-1);
   }
 }

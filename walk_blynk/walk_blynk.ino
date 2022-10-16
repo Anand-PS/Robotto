@@ -64,10 +64,7 @@ void loop()
   Serial.println(ultrasound());
   distance = ultrasound();
 
-  if(distance <=15)
-   Blynk.virtualWrite(V2,1);
-  else
-   Blynk.virtualWrite(V2,0);
+  Blynk.virtualWrite(V2,distance);
 
   if(forward == 1)
   {
